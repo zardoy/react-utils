@@ -5,10 +5,10 @@ interface RenderToRootOptions {
     /** @default true */
     strictMode?: boolean
     /** @default #root */
-    selector: string;
+    selector?: string;
 }
 
-export const renderToRoot = (Element: JSX.Element, { strictMode = true, selector = "#root" }: RenderToRootOptions) => {
+export const renderToDom = (Element: JSX.Element, { strictMode = true, selector = "#root" }: RenderToRootOptions = {}) => {
     ReactDOM.render(strictMode ? <React.StrictMode>{Element}</React.StrictMode> : Element, document.querySelector(selector));
 }
 
