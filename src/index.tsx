@@ -21,7 +21,7 @@ export const useToggleState = (
     const [state, setState] = useState(initialState);
     return useMemo(() => {
         return {
-            isOpen: state,
+            state,
             on: () => setState(true),
             off: () => setState(false),
             toggle: () => setState(s => !s)
