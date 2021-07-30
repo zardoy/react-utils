@@ -1,6 +1,9 @@
 {
     "extends": "@zardoy/tsconfig/node",
     "compilerOptions": {
+        "types": [
+            "@zardoy/tsconfig"
+        ],
         "declaration": true
     }
 }
