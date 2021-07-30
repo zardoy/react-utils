@@ -37,7 +37,7 @@ initialState = false) => {
     const [state, setState] = react_1.useState(initialState);
     return react_1.useMemo(() => {
         return {
-            isOpen: state,
+            state,
             on: () => setState(true),
             off: () => setState(false),
             toggle: () => setState(s => !s)

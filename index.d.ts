@@ -6,7 +6,7 @@ interface RenderToRootOptions {
 }
 export declare const renderToRoot: (Element: JSX.Element, { strictMode, selector }: RenderToRootOptions) => void;
 export declare const useToggleState: (initialState?: boolean) => {
-    isOpen: boolean;
+    state: boolean;
     on: () => void;
     off: () => void;
     toggle: () => void;
