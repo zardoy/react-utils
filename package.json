@@ -1,0 +1,28 @@
+{
+  "name": "@zardoy/react-util",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": "https://github.com/zardoy/react-utils.git",
+  "author": "Vitaly Turovsky <vital2580@icloud.com>",
+  "license": "MIT",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "prepublishOnly": "tsc && node scripts/prepare-package-json.mjs"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.9",
+    "@zardoy/tsconfig": "^1.1.0",
+    "modify-json-file": "^1.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.4"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
