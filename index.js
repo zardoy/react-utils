@@ -22,13 +22,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.useToggleState = exports.renderToRoot = void 0;
+exports.useToggleState = exports.renderToDom = void 0;
 const react_1 = __importStar(require("react"));
 const react_dom_1 = __importDefault(require("react-dom"));
-const renderToRoot = (Element, { strictMode = true, selector = "#root" }) => {
+const renderToDom = (Element, { strictMode = true, selector = "#root" } = {}) => {
     react_dom_1.default.render(strictMode ? react_1.default.createElement(react_1.default.StrictMode, null, Element) : Element, document.querySelector(selector));
 };
-exports.renderToRoot = renderToRoot;
+exports.renderToDom = renderToDom;
 const useToggleState = (
 /**
  * @default false
