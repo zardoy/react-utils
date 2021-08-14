@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 interface RenderToRootOptions {
@@ -10,6 +10,10 @@ interface RenderToRootOptions {
 
 export const renderToDom = (Element: JSX.Element, { strictMode = true, selector = '#root' }: RenderToRootOptions = {}) => {
     ReactDOM.render(strictMode ? <React.StrictMode>{Element}</React.StrictMode> : Element, document.querySelector(selector))
+}
+
+export const useInitEffect = (effect: React.EffectCallback) => {
+    useEffect(effect, [])
 }
 
 export const useToggleState = (
