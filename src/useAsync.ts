@@ -1,4 +1,6 @@
-import { DependencyList, useEffect } from "react";
+import { DependencyList, useEffect } from 'react'
+
+// That's why I love svelte
 
 // TODO implement it for filmomania
 
@@ -9,10 +11,10 @@ import { DependencyList, useEffect } from "react";
 //     const [state, callback] = useAsyncFn(fn, deps, {
 //         loading: true,
 //       });
-    
+
 //       useEffect(() => {
 //         callback();
 //       }, [callback]);
-    
+
 //       return state;
 // }
