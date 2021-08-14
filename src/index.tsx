@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import ReactDOM from 'react-dom'
 
 interface RenderToRootOptions {
@@ -19,12 +19,13 @@ export const useToggleState = (
     initialState = false,
 ) => {
     const [state, setState] = useState(initialState)
-    return useMemo(() => {
-        return {
-            state,
-            on: () => setState(true),
-            off: () => setState(false),
-            toggle: () => setState((s) => !s),
-        }
-    }, [state])
+    const turnOn = useCallback(() => setState(true), [])
+    const turnOff = useCallback(() => setState(false), [])
+    const toggle = useCallback(s => setState(s), [])
+    return {
+        isOn: state,
+        turnOn,
+        turnOff,
+        toggle,
+    }
 }
