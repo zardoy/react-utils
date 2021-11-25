@@ -33,3 +33,22 @@ export const useToggleState = (
         toggle,
     }
 }
+
+export const useModalState = (
+    /**
+     * The same `useToggleState` but with property names for modal
+     * @default false
+     */
+    initialState = false,
+) => {
+    const [state, setState] = useState(initialState)
+    const turnOn = useCallback(() => setState(true), [])
+    const turnOff = useCallback(() => setState(false), [])
+    const toggle = useCallback(s => setState(s), [])
+    return {
+        isOpen: state,
+        open: turnOn,
+        close: turnOff,
+        toggle,
+    }
+}
