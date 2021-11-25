@@ -25,11 +25,11 @@ export const useToggleState = (
     const [state, setState] = useState(initialState)
     const turnOn = useCallback(() => setState(true), [])
     const turnOff = useCallback(() => setState(false), [])
-    const toggle = useCallback(s => setState(s), [])
+    const toggle = useCallback((s?: boolean) => (s ? setState(s) : setState(c => !c)), [])
     return {
-        isOn: state,
-        turnOn,
-        turnOff,
+        state,
+        on: turnOn,
+        off: turnOff,
         toggle,
     }
 }
@@ -41,14 +41,11 @@ export const useModalState = (
      */
     initialState = false,
 ) => {
-    const [state, setState] = useState(initialState)
-    const turnOn = useCallback(() => setState(true), [])
-    const turnOff = useCallback(() => setState(false), [])
-    const toggle = useCallback(s => setState(s), [])
+    const { state, toggle, off, on } = useToggleState(initialState)
     return {
         isOpen: state,
-        open: turnOn,
-        close: turnOff,
+        open: on,
+        close: off,
         toggle,
     }
 }
