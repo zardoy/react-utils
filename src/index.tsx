@@ -25,7 +25,7 @@ export const useToggleState = (
     const [state, setState] = useState(initialState)
     const turnOn = useCallback(() => setState(true), [])
     const turnOff = useCallback(() => setState(false), [])
-    const toggle = useCallback((s?: boolean) => (s ? setState(s) : setState(c => !c)), [])
+    const toggle = useCallback((s?: boolean) => (s !== undefined ? setState(s) : setState(c => !c)), [])
     return {
         state,
         on: turnOn,
