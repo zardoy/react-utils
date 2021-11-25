@@ -52,3 +52,5 @@ export const useModalState = (
         toggle,
     }
 }
+
+export { default as ErrorBoundary } from './errorBoundary'
