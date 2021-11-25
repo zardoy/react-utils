@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^16.11.10
   '@types/react': ^17.0.11
   '@types/react-dom': ^17.0.9
   '@zardoy/tsconfig': ^1.1.0
@@ -9,6 +10,7 @@ specifiers:
   typescript: ^4.3.4
 
 devDependencies:
+  '@types/node': 16.11.10
   '@types/react': 17.0.37
   '@types/react-dom': 17.0.11
   '@zardoy/tsconfig': 1.2.2_typescript@4.5.2
@@ -17,6 +19,10 @@ devDependencies:
   typescript: 4.5.2
 
 packages:
+
+  /@types/node/16.11.10:
+    resolution: {integrity: sha512-3aRnHa1KlOEEhJ6+CvyHKK5vE9BcLGjtUpwvqYLRvYNQKMfabu3BwfJaA/SLW8dxe28LsNDjtHwePTuzn3gmOA==}
+    dev: true
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
