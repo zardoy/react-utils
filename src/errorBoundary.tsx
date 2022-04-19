@@ -1,7 +1,12 @@
 import React from 'react'
 
+type Props = {
+    children?: React.ReactNode
+    renderError?: (error: Error) => React.ReactNode
+}
+
 // TODO! use that modal from vite as default
-export default class ErrorBoundary extends React.Component<{ renderError?: (error: Error) => React.FC }, { error: Error | undefined }> {
+export default class ErrorBoundary extends React.Component<Props, { error: Error | undefined }> {
     override state = {
         error: undefined,
     }

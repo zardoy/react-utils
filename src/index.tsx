@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 
 interface RenderToRootOptions {
     /** @default true */
@@ -9,10 +9,13 @@ interface RenderToRootOptions {
 }
 
 export const renderToDom = (Element: JSX.Element, { strictMode = true, selector = '#root' }: RenderToRootOptions = {}) => {
-    ReactDOM.render(strictMode ? <React.StrictMode>{Element}</React.StrictMode> : Element, document.querySelector(selector))
+    const root = createRoot(document.querySelector(selector)!)
+    root.render(strictMode ? <React.StrictMode>{Element}</React.StrictMode> : Element)
+    return root
 }
 
-export const useInitEffect = (effect: React.EffectCallback) => {
+/** Use for linter bypass */
+export const useMountEffect = (effect: React.EffectCallback) => {
     useEffect(effect, [])
 }
 
