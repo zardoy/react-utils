@@ -54,3 +54,4 @@ export const useModalState = (
 }
 
 export { default as ErrorBoundary } from './errorBoundary'
+export { extendComponent } from './extendComponent'
