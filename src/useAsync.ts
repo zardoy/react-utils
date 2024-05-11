@@ -1,5 +1,7 @@
 import { DependencyList, useEffect } from 'react'
 
+// superseded by useUtilsEffect
+
 // That's why I love svelte
 
 // TODO implement it for filmomania
