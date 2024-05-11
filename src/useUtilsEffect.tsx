@@ -42,9 +42,9 @@ function registerListener(
   options?: Options,
 ): void
 
-type RegisterListener = typeof registerListener
+export type RegisterListener = typeof registerListener
 
-type Fn = (utils: {
+export type UseUtilsCallback = (utils: {
     signal: AbortSignal
     async: (callback: () => Promise<void> | void) => void
     timeout: (ms: number, callback: () => void) => number
@@ -53,7 +53,7 @@ type Fn = (utils: {
     on: RegisterListener
 }) => void
 
-export default (fn: Fn, deps: DependencyList[]) => {
+export default (fn: UseUtilsCallback, deps: DependencyList[]) => {
     useEffect(() => {
         const controller = new AbortController()
         const timeouts = new Set<number>()
