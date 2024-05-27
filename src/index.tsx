@@ -102,7 +102,7 @@ export const useInitEffect = (cb: () => any) => {
 }
 
 export const globalValidator = {
-    value: (a) => {}
+    value: (a) => { }
 }
 
 export const useAsync = <T extends any>(fn: (signal: AbortSignal) => Promise<T>, deps: any[] = [], enableQuery = true, usePolling = null as number | null) => {
@@ -147,3 +147,5 @@ export const useAsync = <T extends any>(fn: (signal: AbortSignal) => Promise<T>,
         data,
     }
 }
+
+export { default as useUtilsEffect } from './useUtilsEffect'

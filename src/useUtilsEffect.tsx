@@ -53,7 +53,7 @@ export type UseUtilsCallback = (utils: {
     on: RegisterListener
 }) => void
 
-export default (fn: UseUtilsCallback, deps: DependencyList[]) => {
+export default (fn: UseUtilsCallback, deps: DependencyList) => {
     useEffect(() => {
         const controller = new AbortController()
         const timeouts = new Set<number>()
