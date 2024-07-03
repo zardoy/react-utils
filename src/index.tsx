@@ -75,6 +75,14 @@ export type AwaitedClickAction = {
     onClick: (e: any) => Promise<void>
 }
 
+type ErrorHandler = (error: Error) => void
+
+let clickActionErrorHandler: ErrorHandler | undefined
+
+export const setClickActionErrorHandler = (handler: ErrorHandler) => {
+    clickActionErrorHandler = handler
+}
+
 export const useAwaitedClickAction = (action: () => Promise<void>, forceDisabled = false): AwaitedClickAction => {
     const [disabled, setDisabled] = useState(false)
 
@@ -86,6 +94,9 @@ export const useAwaitedClickAction = (action: () => Promise<void>, forceDisabled
             setDisabled(true)
             try {
                 await action()
+            } catch (err) {
+                if (clickActionErrorHandler) clickActionErrorHandler(err)
+                else throw err
             } finally {
                 setDisabled(false)
             }
