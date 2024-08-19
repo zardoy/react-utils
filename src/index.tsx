@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { createRoot } from 'react-dom/client'
 
 interface RenderToRootOptions {
@@ -6,6 +7,10 @@ interface RenderToRootOptions {
     strictMode?: boolean
     /** @default #root */
     selector?: string
+}
+
+export const Portal = ({ children, to = document.body }: { children: React.ReactNode, to?: HTMLElement }) => {
+    return createPortal(children, to)
 }
 
 export const renderToDom = (Element: JSX.Element, { strictMode = true, selector = '#root' }: RenderToRootOptions = {}) => {
